@@ -11,24 +11,28 @@ class Bottles {
                 out.print(beers + pluralBottles(beers) + " of beer on the wall,");
                 out.println(beers + pluralBottles(beers) + " of beer,");
                 out.print(takeBeerDown(beers));
-                out.println("99 bottles of beer on the wall.\r\n");
+                out.println(beersLeft(beers) + pluralBottles(beersLeft(beers)) + " of beer on the wall.\r\n");
             } else if (beers == 1) {
                 out.print(beers + pluralBottles(beers) + " of beer on the wall,");
                 out.println(beers + pluralBottles(beers) + " of beer,");
                 out.print(takeBeerDown(beers));
-                out.println(beers - 1 + pluralBottles(beers+1) + " of beer on the wall.\r\n");
+                out.println(beersLeft(beers) + pluralBottles(beersLeft(beers)) + " of beer on the wall.\r\n");
             } else if (beers == 2) {
                 out.print(beers + pluralBottles(beers) + " of beer on the wall,");
                 out.println(beers + pluralBottles(beers) + " of beer,");
                 out.print(takeBeerDown(beers));
-                out.println(beers - 1 + pluralBottles(beers-1) + " of beer on the wall.\r\n");
+                out.println(beersLeft(beers) + pluralBottles(beersLeft(beers)) + " of beer on the wall.\r\n");
             } else {
                 out.print(beers + pluralBottles(beers) + " of beer on the wall,");
                 out.println(beers + pluralBottles(beers) + " of beer,");
                 out.print(takeBeerDown(beers));
-                out.println(beers - 1 + pluralBottles(beers) + " of beer on the wall.\r\n");
+                out.println(beersLeft(beers) + pluralBottles(beersLeft(beers)) + " of beer on the wall.\r\n");
             }
         }
+    }
+
+    public static int beersLeft(int beers) {
+        return (beers != 0) ? beers - 1 : 99;
     }
 
     public static String pluralBottles(int beers) {
