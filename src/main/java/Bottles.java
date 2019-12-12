@@ -7,18 +7,22 @@ class Bottles {
 
     public static void writeLyrics(PrintStream out) {
         for (int beers = 99; beers > -1; beers--) {
-                out.print(beers + pluralBottles(beers) + " of beer on the wall,");
-                out.println(beers + pluralBottles(beers) + " of beer,");
+                out.print(bootles(beers) + " of beer on the wall,");
+                out.println(bootles(beers) + " of beer,");
                 out.print(takeBeerDown(beers));
-                out.println(beersLeft(beers) + pluralBottles(beersLeft(beers)) + " of beer on the wall.\r\n");
+                out.println(bootles(beersLeft(beers)) + " of beer on the wall.\r\n");
         }
+    }
+
+    private static String bootles(int beers) {
+        return beers + pluralInBottle(beers);
     }
 
     public static int beersLeft(int beers) {
         return (beers != 0) ? beers - 1 : 99;
     }
 
-    public static String pluralBottles(int beers) {
+    public static String pluralInBottle(int beers) {
         return (beers != 1) ? " bottles" : " bottle";
     }
 
